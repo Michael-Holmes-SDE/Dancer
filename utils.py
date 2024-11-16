@@ -1,8 +1,8 @@
 import os  
 import json
 import pygame
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QListWidget, QListWidgetItem, QLabel, QHBoxLayout, QPushButton, QSlider, QGraphicsDropShadowEffect
-from PyQt5.QtGui import QMovie, QIntValidator
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QListWidget, QListWidgetItem, QLabel, QHBoxLayout, QPushButton, QSlider, QGraphicsDropShadowEffect,  QSpinBox
+from PyQt5.QtGui import QMovie
 from PyQt5.QtCore import Qt
 
 
@@ -54,7 +54,7 @@ def load_settings(self):
             self.music_folder = config_settings.get('music_folder', 'music')
     else:
         self.gifs_folder = 'GIFs'
-        self.current_gif = os.path.join(self_gifs_folder, 'default.gif')
+        self.current_gif = os.path.join(self.gifs_folder, 'default.gif')
         self.music_folder = 'music'
     load_gif_settings(self) 
 
@@ -170,9 +170,6 @@ class SongSelectionDialog(BaseSelectionDialog):
 
 
 
-
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QHBoxLayout, QLabel, QSlider, QPushButton, QSpinBox
-from PyQt5.QtCore import Qt
 
 class BaseSliderDialog(QDialog):
     def __init__(self, title, min_value, max_value, current_value, parent=None):

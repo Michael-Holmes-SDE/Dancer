@@ -1,8 +1,7 @@
-import json
 import sys
 import os
 import pygame
-from PyQt5.QtWidgets import QApplication, QGraphicsDropShadowEffect, QLabel, QMainWindow, QInputDialog, QDialog
+from PyQt5.QtWidgets import QApplication, QGraphicsDropShadowEffect, QLabel, QMainWindow, QDialog
 from PyQt5.QtGui import QMovie
 from PyQt5.QtCore import Qt, QPoint
 from tray_icon import create_tray_icon, update_tray_menu
