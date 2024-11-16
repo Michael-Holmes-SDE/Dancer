@@ -1,9 +1,18 @@
 # Dancer
 
-Maintainer: Michael Holmes
+A reconfigurable Konata Dancer
+
+Allows changing the GIF, song, and other settings
 
 
-# TODO:
+# Instructions
+    - Place wanted GIFs in the *GIFs* folder
+    - Place wanted songs in the *music* folder
+    - Right-click on icon in tray (the ^ on the right side of the taskbar) to pull up options
+Settings you change for a certain GIF (including the song) will automatically save and be reapplied when reopening that GIF
+
+
+# TODO / known issues:
     - [ X ] Improve UI of music selection
         - [ XOX ] Allow listening to 5 second sample?
             - For now just letting listen indefinitely
@@ -16,12 +25,3 @@ Maintainer: Michael Holmes
         - Similar for Shadow and Gif_Speed now as well
     - [  ] Test as an executable and as an Ubuntu app
 
-
-
-
-# Instructions
-    - Place wanted GIFs in the *gifs* folder
-        - Make sure to have both a *default.gif*
-    - Place wanted music in the *music* folder
-        - Make sure to have both a *default.mp3*
-    - Right-click on icon in tray (the ^ on the right side of the taskbar) to pull up options
