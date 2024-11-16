@@ -16,7 +16,7 @@ def save_settings(self):
         settings = {
             'config': {
                 'current_gif': '',
-                'gifs_folder': 'gifs',
+                'gifs_folder': 'GIFs',
                 'music_folder': 'music',
             },
             'gifs': {}
@@ -49,14 +49,14 @@ def load_settings(self):
         with open(SETTINGS_FILE, 'r') as f:
             settings = json.load(f)
             config_settings = settings.get('config', {})
-            self.current_gif = os.path.normpath(config_settings.get('current_gif', os.path.join('gifs', 'default.gif')))
-            self.gifs_folder = config_settings.get('gifs_folder', 'gifs')
+            self.gifs_folder = config_settings.get('gifs_folder', 'GIFs')
+            self.current_gif = os.path.normpath(config_settings.get('current_gif', os.path.join(self.gifs_folder, 'default.gif')))
             self.music_folder = config_settings.get('music_folder', 'music')
-        load_gif_settings(self) 
     else:
-        self.current_gif = os.path.join('gifs', 'default.gif')
-        self.gifs_folder = 'gifs'
+        self.gifs_folder = 'GIFs'
+        self.current_gif = os.path.join(self_gifs_folder, 'default.gif')
         self.music_folder = 'music'
+    load_gif_settings(self) 
 
 def load_gif_settings(self):
     if os.path.exists(SETTINGS_FILE):
@@ -65,14 +65,14 @@ def load_gif_settings(self):
             gif_settings = settings.get('gifs', {}).get(os.path.relpath(self.current_gif), {})
             self.gif_speed = gif_settings.get('gif_speed', 100)
             music_settings = gif_settings.get('music', {})
-            self.current_song = os.path.normpath(music_settings.get('current_song', os.path.join('music', 'default.mp3')))
+            self.current_song = os.path.normpath(music_settings.get('current_song', os.path.join(self.music_folder, 'default.mp3')))
             self.music_enabled = music_settings.get('music_enabled', True)
             window_settings = gif_settings.get('window', {})
             self.transparency = window_settings.get('transparency', 0)
             self.shadow = window_settings.get('shadow', 0)
     else:
         self.gif_speed = 100
-        self.current_song = os.path.join('music', 'default.mp3')
+        self.current_song = os.path.join(self.music_folder, 'default.mp3')
         self.music_enabled = True
         self.transparency = 0
         self.shadow = 0
