@@ -12,6 +12,15 @@ Allows changing the GIF, song, and other settings
 Settings you change for a certain GIF (including the song) will automatically save and be reapplied when reopening that GIF
 
 
+
+
+# Build Instructions
+    - Install PyInstaller: pip install pyinstaller
+    - Build the executable: pyinstaller Dancer.spec
+    - Move the executable from the 'dist' folder
+
+
+
 # TODO / known issues:
     - [ X ] Improve UI of music selection
         - [ XOX ] Allow listening to 5 second sample?

@@ -1,0 +1,20 @@
+{
+    "config": {
+        "current_gif": "gifs\\default.gif",
+        "gifs_folder": "gifs",
+        "music_folder": "music"
+    },
+    "gifs": {
+        "gifs\\default.gif": {
+            "gif_speed": 100,
+            "music": {
+                "current_song": "music\\default.mp3",
+                "music_enabled": true
+            },
+            "window": {
+                "transparency": 0,
+                "shadow": 0
+            }
+        }
+    }
+}
